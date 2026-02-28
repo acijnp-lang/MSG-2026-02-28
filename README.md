@@ -1,5 +1,96 @@
 < MSG TELECOM >
 <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MSG Telecom</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+        }
+        header {
+            background-color: #0a3d62;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #1e3799;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        section {
+            padding: 30px;
+            text-align: center;
+        }
+        .services {
+            background-color: #ffffff;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        footer {
+            background-color: #0a3d62;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+        .btn {
+            background-color: #1e3799;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>MSG Telecom</h1>
+    <p>Reliable Mobile & Telecom Services</p>
+</header>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section id="home">
+    <h2>Welcome to MSG Telecom</h2>
+    <p>We provide fast, reliable and affordable telecom solutions.</p>
+</section>
+
+<section id="services" class="services">
+    <h2>Our Services</h2>
+    <p>📱 Mobile Recharge</p>
+    <p>🌐 Internet Services</p>
+    <p>🔧 Mobile Repair & Accessories</p>
+</section>
+
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p><strong>Mobile Number:</strong> 7860724819</p>
+    <a href="tel:7860724819" class="btn">Call Now</a>
+</section>
+
+<footer>
+    <p>© 2026 MSG Telecom. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
 <head>
     <meta charset="UTF-8">
     <title>MSG DigitalBoost - MSG Digital Marketing Agency</title>
