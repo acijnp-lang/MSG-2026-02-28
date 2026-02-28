@@ -1,4 +1,4 @@
-<!MSG DOCTYPE html>
+<!MSG TELECOM>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -76,7 +76,7 @@
 <body>
 
 <header>
-    <h1>DigitalBoost</h1>
+    <h1>MSG TELECOM DigitalBoost</h1>
     <p>Grow Your Business with Smart Digital Marketing</p>
 </header>
 
