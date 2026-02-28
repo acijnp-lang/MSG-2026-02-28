@@ -122,7 +122,7 @@
 <section id="contact" class="section">
     <h2>Contact Us</h2>
     <p>Email: info@digitalboost.com</p>
-    <p>Phone: +91 98765 43210</p>
+    <p>Phone: +91 7860724019</p>
 </section>
 
 <footer>
