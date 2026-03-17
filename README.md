@@ -1,24 +1,23 @@
-<msg telecom>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>MSG -MSG TELECOM Digital Marketing Agency</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MSG Telecom</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<header>
-    <h1>MSG Telecom</h1>
-    <p>Recharge & Digital Services</p>
-</header>
-
-<nav>
-    <a href="#">Home</a>
-    <a href="#services">Services</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-</nav>
+    <style>
+        body { margin: 0; font-family: Arial, sans-serif; line-height: 1.6; }
+        header { background: #0d6efd; color: white; padding: 20px 0; text-align: center; }
+        nav { background: #222; padding: 10px; text-align: center; }
+        nav a { color: white; margin: 0 15px; text-decoration: none; }
+        nav a:hover { color: #0d6efd; }
+        .hero { padding: 60px 20px; text-align: center; background: #f4f4f4; }
+        .btn { display: inline-block; padding: 10px 20px; background: #0d6efd; color: white; text-decoration: none; border-radius: 5px; margin-top: 15px; }
+        .section { padding: 40px 20px; text-align: center; }
+        .services { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+        .card { border: 1px solid #ddd; padding: 20px; width: 250px; border-radius: 8px; }
+        footer { background: #222; color: white; text-align: center; padding: 15px; }
+        @media(max-width: 768px) {
+            .services { flex-direction: column; align-items: center; }
+        }
 
 <section class="hero">
     <h2>Get 3% Cashback on Every Recharge</h2>
