@@ -1,11 +1,7 @@
 < MSG TELECOM >
 <html lang="en">
     <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MSG Telecom</title>
-    <style>
-<body class="bg-gray-100"><div class="flex">
+      <body class="bg-gray-100"><div class="flex">
   <!-- Sidebar -->
   <div class="w-64 bg-blue-700 text-white min-h-screen p-5">
     <h2 class="text-2xl font-bold mb-6">Recharge App</h2>
