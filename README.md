@@ -60,18 +60,6 @@
     <h2>About Us</h2>
     <p>MSG Telecom provides fast and secure recharge services with cashback offers. We aim to deliver the best digital services to our customers.</p>
 </section>
-
-<section id="contact">
-    <h2>Contact Us</h2>
-    <p>📞 8090233329</p>
-    <p>📍 Near Siddhivinayak Hero Agency, Machhalisahar</p>
-    <button onclick="whatsapp()">Chat on WhatsApp</button>
-</section>
-
-<footer>
-    <p>© 2026 MSG Telecom. All rights reserved.</p>
-</footer>
-
 <script src="script.js"></script>
 </body>
 </html>>
@@ -80,10 +68,11 @@
     <h2>Contact Us</h2>
     <p>Email: acijnp@gmail.com</p>
     <p>Phone: +91 7860724019</p>
+    <button onclick="whatsapp(https://chat.whatsapp.com/DNmcPeoVzHL0ioYOJEEuK4?mode=gi_t)">Chat on WhatsApp</button>
 </section>
 
 <footer>
-    <p>© 2026 DigitalBoost. All Rights Reserved.</p>
+    <p>© 2026 MSG Telecom. All rights reserved.</p>
 </footer>
 
 </body>
