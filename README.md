@@ -1,21 +1,4 @@
 < MSG TELECOM >
-recharge-pro/
-│
-├── config.php
-├── login.php
-├── register.php
-├── dashboard.php
-├── recharge.php
-├── wallet.php
-├── history.php
-├── admin/
-│   ├── admin.php
-│   ├── users.php
-│   ├── recharges.php
-│   └── add_balance.php
-└── database.sql
-CREATE DATABASE recharge_pro;
-USE recharge_pro;
 
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
