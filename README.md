@@ -65,9 +65,9 @@
     <h2>Contact Us</h2>
     <p>Email: acijnp@gmail.com</p>
     <p>Phone: +91 7860724019</p>
-    <button onclick="whatsapp(https://chat.whatsapp.com/DNmcPeoVzHL0ioYOJEEuK4?mode=gi_t)">Chat on WhatsApp</button>
+    <button onclick="#whatsapp(https://chat.whatsapp.com/DNmcPeoVzHL0ioYOJEEuK4?mode=gi_t)">Chat on WhatsApp</button>
 </section>
 
 <footer>
-    <p>© 2026 MSG Telecom. All rights reserved.</p>
+    <p>© 2024 MSG Telecom. All rights reserved.</p>
 </footer>
