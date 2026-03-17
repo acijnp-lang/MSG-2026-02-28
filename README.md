@@ -1,150 +1,82 @@
-< MSG TELECOM >
-
-CREATE TABLE users (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(50),
-    password VARCHAR(255),
-    wallet FLOAT DEFAULT 0,
-    role VARCHAR(20) DEFAULT 'user'
-);
-
-CREATE TABLE recharge (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    user_id INT,
-    number VARCHAR(20),
-    amount FLOAT,
-    commission FLOAT,
-    status VARCHAR(20),
-    txn_id VARCHAR(50)
-);
-
-CREATE TABLE transactions (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    user_id INT,
-    amount FLOAT,
-    type VARCHAR(20),
-    date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-<?php
-include "config.php";
-
-if(isset($_POST['register'])){
-    $u = $_POST['username'];
-    $p = password_hash($_POST['password'], PASSWORD_DEFAULT);
-
-    mysqli_query($conn, "INSERT INTO users(username,password) VALUES('$u','$p')");
-    echo "Registered!";
-}
-?>
-
-<form method="POST">
-<input name="username" placeholder="Username">
-<input type="password" name="password" placeholder="Password">
-<button name="register">Register</button>
-</form>
-<?php
-include "config.php";
-
-if(isset($_POST['login'])){
-    $u = $_POST['username'];
-    $p = $_POST['password'];
-
-    $res = mysqli_query($conn, "SELECT * FROM users WHERE username='$u'");
-    $row = mysqli_fetch_assoc($res);
-
-    if($row && password_verify($p, $row['password'])){
-        $_SESSION['user_id'] = $row['id'];
-        $_SESSION['role'] = $row['role'];
-
-        if($row['role'] == 'admin'){
-            header("Location: admin/admin.php");
-        } else {
-            header("Location: dashboard.php");
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MSG -MSG TELECOM Digital Marketing Agency</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { margin: 0; font-family: Arial, sans-serif; line-height: 1.6; }
+        header { background: #0d6efd; color: white; padding: 20px 0; text-align: center; }
+        nav { background: #222; padding: 10px; text-align: center; }
+        nav a { color: white; margin: 0 15px; text-decoration: none; }
+        nav a:hover { color: #0d6efd; }
+        .hero { padding: 60px 20px; text-align: center; background: #f4f4f4; }
+        .btn { display: inline-block; padding: 10px 20px; background: #0d6efd; color: white; text-decoration: none; border-radius: 5px; margin-top: 15px; }
+        .section { padding: 40px 20px; text-align: center; }
+        .services { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+        .card { border: 1px solid #ddd; padding: 20px; width: 250px; border-radius: 8px; }
+        footer { background: #222; color: white; text-align: center; padding: 15px; }
+        @media(max-width: 768px) {
+            .services { flex-direction: column; align-items: center; }
         }
-    } else {
-        echo "Login Failed";
-    }
-}
-?>
-<?php include "config.php"; ?>
+    </style>
+</head>
+<body>
 
-<h2>User Dashboard</h2>
+<header>
+    <h1>MSG TELECOM</h1>
+    <p>Grow Your Business with Smart Digital Marketing</p>
+</header>
 
-<a href="wallet.php">Wallet</a> |
-<a href="history.php">History</a>
+<nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+</nav>
 
-<form method="POST" action="recharge.php">
-<input name="number" placeholder="Mobile Number">
-<input name="amount" placeholder="Amount">
-<button name="recharge">Recharge</button>
-</form>
-<?php
-include "config.php";
+<section class="hero">
+    <h2>We Help Brands Grow Online</h2>
+    <p>SEO, Social Media, Paid Ads & Complete Digital Solutions</p>
+    <a href="#contact" class="btn">Get Free Consultation</a>
+</section>
 
-if(isset($_POST['recharge'])){
-    $user = $_SESSION['user_id'];
-    $num = $_POST['number'];
-    $amt = $_POST['amount'];
+<section id="about" class="section">
+    <h2>About Us</h2>
+    <p>We are a results-driven digital marketing agency helping businesses increase traffic, leads, and sales through proven online strategies.</p>
+</section>
 
-    $res = mysqli_query($conn, "SELECT wallet FROM users WHERE id='$user'");
-    $row = mysqli_fetch_assoc($res);
+<section id="services" class="section">
+    <h2>Our Services</h2>
+    <div class="services">
+        <div class="card">
+            <h3>SEO</h3>
+            <p>Improve your Google rankings and drive organic traffic.</p>
+        </div>
+        <div class="card">
+            <h3>Social Media Marketing</h3>
+            <p>Build your brand on Facebook, Instagram & LinkedIn.</p>
+        </div>
+        <div class="card">
+            <h3>Google Ads</h3>
+            <p>Run high-converting paid ad campaigns.</p>
+        </div>
+        <div class="card">
+            <h3>Website Development</h3>
+            <p>Modern, fast and responsive business websites.</p>
+        </div>
+    </div>
+</section>
 
-    if($row['wallet'] >= $amt){
+<section id="contact" class="section">
+    <h2>Contact Us</h2>
+    <p>Email: acijnp@gmail.com</p>
+    <p>Phone: +91 7860724019</p>
+</section>
 
-        // Deduct wallet
-        mysqli_query($conn, "UPDATE users SET wallet = wallet - $amt WHERE id='$user'");
+<footer>
+    <p>© 2026 DigitalBoost. All Rights Reserved.</p>
+</footer>
 
-        // Commission (2%)
-        $commission = $amt * 0.02;
-
-        // Generate TXN ID
-        $txn = "TXN".rand(10000,99999);
-
-        // 🔌 API CALL (replace with real)
-        $api_response = "SUCCESS";
-
-        $status = ($api_response == "SUCCESS") ? "SUCCESS" : "FAILED";
-
-        mysqli_query($conn, "INSERT INTO recharge(user_id,number,amount,commission,status,txn_id)
-        VALUES('$user','$num','$amt','$commission','$status','$txn')");
-
-        echo "Recharge $status | TXN: $txn";
-
-    } else {
-        echo "Insufficient Balance";
-    }
-}
-?>
-<?php
-include "config.php";
-
-$user = $_SESSION['user_id'];
-
-$res = mysqli_query($conn, "SELECT wallet FROM users WHERE id='$user'");
-$row = mysqli_fetch_assoc($res);
-
-echo "<h2>Balance: ₹".$row['wallet']."</h2>";
-?>
-<?php
-include "config.php";
-
-$user = $_SESSION['user_id'];
-
-$res = mysqli_query($conn, "SELECT * FROM recharge WHERE user_id='$user'");
-
-while($r = mysqli_fetch_assoc($res)){
-    echo $r['number']." | ₹".$r['amount']." | ".$r['status']." | ".$r['txn_id']."<br>";
-}
-?>
-<?php include "../config.php"; ?>
-
-<h2>Admin Panel</h2>
-
-<a href="users.php">Users</a> |
-<a href="recharges.php">Recharges</a>
-$api_response = "SUCCESS";
-$api_url = "https://api.com/recharge?number=$num&amount=$amt&key=APIKEY";
-$response = file_get_contents($api_url);
-$data = json_decode($response, true);
-
+</body>
+</html>
 $status = $data['status'];
