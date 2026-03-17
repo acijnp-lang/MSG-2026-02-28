@@ -61,9 +61,6 @@
     <p>MSG Telecom provides fast and secure recharge services with cashback offers. We aim to deliver the best digital services to our customers.</p>
 </section>
 <script src="script.js"></script>
-</body>
-</html>>
-
 <section id="contact" class="section">
     <h2>Contact Us</h2>
     <p>Email: acijnp@gmail.com</p>
@@ -74,6 +71,3 @@
 <footer>
     <p>© 2026 MSG Telecom. All rights reserved.</p>
 </footer>
-
-</body>
-</html>
