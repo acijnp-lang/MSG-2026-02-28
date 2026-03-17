@@ -18,7 +18,6 @@
         @media(max-width: 768px) {
             .services { flex-direction: column; align-items: center; }
         }
-
 <section class="hero">
     <h2>Get 3% Cashback on Every Recharge</h2>
     <p>Fast • Secure • Reliable Services</p>
