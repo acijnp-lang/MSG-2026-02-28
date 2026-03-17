@@ -18,6 +18,20 @@
         @media(max-width: 768px) {
             .services { flex-direction: column; align-items: center; }
         }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>MSG TELECOM</h1>
+    <p>Grow Your Business with Smart Digital Marketing</p>
+</header>
+
+<nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+</nav>
 <section class="hero">
     <h2>Get 3% Cashback on Every Recharge</h2>
     <p>Fast • Secure • Reliable Services</p>
