@@ -51,11 +51,6 @@
             border-radius: 5px;
             display: inline-block;
             margin-top: 10px;
-        }
-    </style>
-</head>
-<body>
-<!DOCTYPE html><html lang="en">
 <head>
 <body class="bg-gray-100"><div class="flex">
   <!-- Sidebar -->
