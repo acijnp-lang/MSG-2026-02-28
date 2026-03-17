@@ -44,10 +44,10 @@
         <div class="card">
             <h3>Mobile Recharge</h3>
             <p>All operators recharge available</p>
-        </div>
-        <div class="card">
-            <h3>DTH Recharge</h3>
-            <p>Instant DTH recharge services</p>
+     </div>
+                                                      <div class="card">
+                                                       <h3>DTH Recharge</h3>
+                                                         <p>Instant DTH recharge services</p>
         </div>
         <div class="card">
             <h3>Bill Payments</h3>
